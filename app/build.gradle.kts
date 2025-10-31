@@ -111,3 +111,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.8")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
 }
+
+configurations.configureEach {
+    if (name.endsWith("RuntimeClasspathCopy")) {
+        isCanBeConsumed = false
+    }
+}
