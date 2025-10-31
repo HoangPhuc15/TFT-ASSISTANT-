@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TFT Assistant</string>
+    <string name="overlay_permission_rationale">Ứng dụng cần quyền hiển thị trên các ứng dụng khác để cung cấp gợi ý trong trận đấu.</string>
+    <string name="start_overlay">Bắt đầu overlay</string>
+    <string name="stop_overlay">Tắt overlay</string>
+    <string name="sync_meta">Đồng bộ meta</string>
+    <string name="loading">Đang xử lý…</string>
+</resources>

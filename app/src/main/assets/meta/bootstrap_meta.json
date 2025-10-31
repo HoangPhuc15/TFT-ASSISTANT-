@@ -1,0 +1,99 @@
+{
+  "version": "15.0-seed",
+  "lastUpdated": "2024-07-01T00:00:00Z",
+  "champions": [
+    {
+      "id": "ahri",
+      "name": "Ahri",
+      "cost": 4,
+      "traits": ["Mythic", "Sorcerer"],
+      "recommendedItems": ["blue_buff", "rabadons_deathcap", "jeweled_gauntlet"]
+    },
+    {
+      "id": "shen",
+      "name": "Shen",
+      "cost": 3,
+      "traits": ["Dragonmancer", "Bruiser"],
+      "recommendedItems": ["warmogs_armor", "bramble_vest", "gargoyle_stoneplate"]
+    }
+  ],
+  "traits": [
+    {
+      "id": "Mythic",
+      "name": "Thần Thoại",
+      "description": "Tăng sức mạnh phép cho đồng minh.",
+      "thresholds": [2, 4, 6]
+    },
+    {
+      "id": "Bruiser",
+      "name": "Đấu Sĩ",
+      "description": "Tăng máu tối đa.",
+      "thresholds": [2, 4, 6]
+    }
+  ],
+  "items": [
+    {
+      "id": "blue_buff",
+      "name": "Nước Mắt Song Sinh",
+      "effect": "Tăng tốc độ hồi mana.",
+      "buildsFrom": ["tear", "tear"]
+    },
+    {
+      "id": "rabadons_deathcap",
+      "name": "Mũ Phù Thủy Rabadon",
+      "effect": "Tăng sức mạnh phép.",
+      "buildsFrom": ["rod", "rod"]
+    },
+    {
+      "id": "jeweled_gauntlet",
+      "name": "Găng Bảo Thạch",
+      "effect": "Đòn đánh chí mạng gây thêm sát thương phép.",
+      "buildsFrom": ["glove", "rod"]
+    },
+    {
+      "id": "warmogs_armor",
+      "name": "Giáp Máu Warmog",
+      "effect": "Tăng lượng máu lớn.",
+      "buildsFrom": ["belt", "belt"]
+    },
+    {
+      "id": "bramble_vest",
+      "name": "Áo Choàng Gai",
+      "effect": "Chặn sát thương chí mạng.",
+      "buildsFrom": ["vest", "vest"]
+    },
+    {
+      "id": "gargoyle_stoneplate",
+      "name": "Thú Tượng Thạch Giáp",
+      "effect": "Tăng giáp và kháng phép khi bị tấn công.",
+      "buildsFrom": ["vest", "cloak"]
+    }
+  ],
+  "augments": [
+    {
+      "id": "blue_blessing",
+      "name": "Phước Lành Lam",
+      "description": "Tăng hồi mana và giảm thời gian tung chiêu.",
+      "style": "silver"
+    },
+    {
+      "id": "rich_get_richer",
+      "name": "Giàu Lại Giàu",
+      "description": "Nhận thêm vàng khi đạt lợi tức.",
+      "style": "gold"
+    }
+  ],
+  "compositions": [
+    {
+      "id": "mythic_sorcerer",
+      "title": "Ahri Thần Thoại",
+      "coreChampions": ["ahri", "shen"],
+      "carryItems": {
+        "ahri": ["blue_buff", "rabadons_deathcap", "jeweled_gauntlet"],
+        "shen": ["warmogs_armor", "bramble_vest"]
+      },
+      "traits": ["Mythic", "Sorcerer", "Bruiser"],
+      "notes": "Ưu tiên lên cấp 8, ghép đồ cho Ahri làm carry chính."
+    }
+  ]
+}
