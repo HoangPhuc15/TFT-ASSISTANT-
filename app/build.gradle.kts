@@ -1,6 +1,3 @@
-import com.android.build.api.dsl.ApplicationExtension
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -112,8 +109,24 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
 }
 
-configurations.matching { it.name.endsWith("RuntimeClasspathCopy") }.configureEach {
+androidComponents.onVariants { variant ->
+    val runtimeConfigName = "${variant.name}RuntimeClasspath"
+    val runtimeConfig = configurations.findByName(runtimeConfigName) ?: return@onVariants
+
+    val copyConfigName = "${variant.name}RuntimeClasspathCopy"
+    val copyConfig = configurations.maybeCreate(copyConfigName)
+
     // Gradle 9 requires these synthetic copy configurations to be resolvable only.
+    copyConfig.isCanBeConsumed = false
+    copyConfig.isCanBeResolved = true
+    copyConfig.isVisible = false
+
+    if (!copyConfig.hierarchy.contains(runtimeConfig)) {
+        copyConfig.extendsFrom(runtimeConfig)
+    }
+}
+
+configurations.matching { it.name.endsWith("RuntimeClasspathCopy") }.configureEach {
     isCanBeConsumed = false
     isCanBeResolved = true
     isVisible = false
