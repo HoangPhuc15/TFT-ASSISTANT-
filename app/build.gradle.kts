@@ -112,8 +112,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
 }
 
-configurations.configureEach {
-    if (name.endsWith("RuntimeClasspathCopy")) {
-        isCanBeConsumed = false
-    }
+configurations.matching { it.name.endsWith("RuntimeClasspathCopy") }.configureEach {
+    // Gradle 9 requires these synthetic copy configurations to be resolvable only.
+    isCanBeConsumed = false
+    isCanBeResolved = true
+    isVisible = false
 }

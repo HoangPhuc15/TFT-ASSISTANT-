@@ -151,7 +151,7 @@ TFT-ASSISTANT-
 ### Build nhanh với Android Studio
 1. Mở Android Studio (Koala trở lên) > `File` > `Open` > trỏ tới thư mục repo.
 2. Đảm bảo Gradle sử dụng phiên bản **9.0** (hoặc 8.7+) cùng Android Gradle Plugin **8.7.2** và Hilt plugin **2.55**. Android Studio Narwhal 3 Feature Drop đã đóng gói các phiên bản này; nếu không dùng `gradlew`, hãy cấu hình trong `Settings > Build Tools > Gradle` để trỏ tới bản Gradle tương thích nhằm tránh lỗi `fileCollection(Spec)`.
-   - Script đã đánh dấu các cấu hình `*RuntimeClasspathCopy` là không tiêu thụ (`canBeConsumed = false`) để đáp ứng yêu cầu mới của Gradle 9 về phân tách cấu hình. Nếu dùng Gradle cũ hơn, thay đổi này vẫn tương thích ngược.
+   - Script đã cấu hình các cấu hình `*RuntimeClasspathCopy` thành chỉ dùng để phân giải phụ thuộc (`canBeConsumed = false`, `canBeResolved = true`, đồng thời ẩn khỏi UI) để đáp ứng yêu cầu mới của Gradle 9 về phân tách cấu hình. Nếu dùng Gradle cũ hơn, thay đổi này vẫn tương thích ngược.
 3. Đồng bộ Gradle, cài đặt dependency ML Kit, TensorFlow Lite từ Google Maven.
 4. Tạo thiết bị ảo API 33+ hoặc cắm máy thật (Android 8.0+). Cấp quyền overlay & ghi màn hình khi được yêu cầu.
 5. Chạy cấu hình `app` ở chế độ debug. Overlay sẽ hiển thị khi ấn nút "Bắt đầu overlay" trong app.
